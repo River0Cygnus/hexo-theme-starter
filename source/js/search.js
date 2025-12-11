@@ -87,6 +87,11 @@
     searchResults.innerHTML = "";
   }
 
+  // 获取站点根路径
+  function getSiteRoot() {
+    return (window.STARTER_CONFIG && window.STARTER_CONFIG.root) || '/';
+  }
+
   // 加载搜索数据
   function loadSearchData() {
     if (searchData || isLoading) return;
@@ -94,7 +99,9 @@
     isLoading = true;
     searchResults.innerHTML = '<div class="search-loading">加载中...</div>';
 
-    fetch("/search.json")
+    const root = getSiteRoot();
+    const searchUrl = root + 'search.json';
+    fetch(searchUrl)
       .then(function (response) {
         return response.json();
       })
@@ -217,8 +224,10 @@
             "</div>";
         }
 
+        const root = getSiteRoot();
         return (
-          '<a href="/' +
+          '<a href="' +
+          root +
           item.url +
           '" class="search-result-item">' +
           '<div class="search-result-title">' +

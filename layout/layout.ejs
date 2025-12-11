@@ -19,6 +19,14 @@
     <%- partial('_partial/search') %>
   <% } %>
 
+  <!-- 站点配置 -->
+  <script>
+    window.STARTER_CONFIG = {
+      root: '<%- config.root %>',
+      searchEnabled: <%= theme.search.enable %>
+    };
+  </script>
+
   <!-- 主脚本 -->
   <%- js('js/main.js') %>
   
