@@ -1682,7 +1682,8 @@ a.tree-label:hover {
   background-color: var(--code-bg);
   border: 1px solid var(--code-border);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .markdown-body figure.highlight pre {
