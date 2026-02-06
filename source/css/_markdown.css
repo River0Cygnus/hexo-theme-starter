@@ -160,7 +160,8 @@
 /* 代码高亮 - 行号 */
 .markdown-body figure.highlight {
   margin: var(--spacing-md) 0;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: var(--radius-md);
   border: 1px solid var(--code-border);
 }
